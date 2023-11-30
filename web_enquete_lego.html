@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poll Links</title>
+</head>
+<body>
+
+<script>
+    function generatePollLink(participantId) {
+        // Replace these links with your actual poll links
+        const pollLinks = [
+            "https://your-poll-a-link.com",
+            "https://your-poll-b-link.com",
+            "https://your-poll-c-link.com"
+        ];
+
+        // Calculate the index based on the participant ID
+        const index = (participantId - 1) % pollLinks.length;
+
+        // Return the corresponding poll link
+        return pollLinks[index];
+    }
+
+    function handleClick(participantId) {
+        const pollLink = generatePollLink(participantId);
+        alert(`Participant ${participantId}: Please take the poll at ${pollLink}`);
+    }
+</script>
+
+<!-- Simulate showing polls to participants -->
+<button onclick="handleClick(1)">Participant 1</button>
+<button onclick="handleClick(2)">Participant 2</button>
+<button onclick="handleClick(3)">Participant 3</button>
+<!-- Add more buttons as needed -->
+
+</body>
+</html>
