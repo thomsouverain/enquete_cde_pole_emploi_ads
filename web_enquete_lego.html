@@ -8,9 +8,9 @@
 <body>
 
 <script>
-    // Replace these links with your actual poll links
+    // Replace these links with your actual poll links; jeu d'offres 1 (clic modulo 1/3); jeu d'offres 2 (clic modulo 2/3)...
     const pollLinks = [
-        "https://forms.office.com/e/W5sGNFWrN0",
+        "https://forms.office.com/e/W5sGNFWrN0",  
         "https://your-poll-b-link.com",
         "https://your-poll-c-link.com"
     ];
@@ -25,12 +25,12 @@
 
     function handleClick() {
         const pollLink = generatePollLink();
-        alert(`Please take the poll at ${pollLink}`);
+        window.location.href = pollLink;
     }
 </script>
 
 <!-- Simulate showing polls to participants -->
-<button onclick="handleClick()">Click Me to Get Your Poll Link</button>
+<button onclick="handleClick()">Click Me to Go to Your Poll Link</button>
 
 </body>
 </html>
