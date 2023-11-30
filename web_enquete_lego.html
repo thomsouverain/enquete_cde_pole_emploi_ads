@@ -8,32 +8,29 @@
 <body>
 
 <script>
-    function generatePollLink(participantId) {
-        // Replace these links with your actual poll links
-        const pollLinks = [
-            "https://your-poll-a-link.com",
-            "https://your-poll-b-link.com",
-            "https://your-poll-c-link.com"
-        ];
+    // Replace these links with your actual poll links
+    const pollLinks = [
+        "https://your-poll-a-link.com",
+        "https://your-poll-b-link.com",
+        "https://your-poll-c-link.com"
+    ];
 
-        // Calculate the index based on the participant ID
-        const index = (participantId - 1) % pollLinks.length;
+    let clickCounter = 0;
 
-        // Return the corresponding poll link
+    function generatePollLink() {
+        const index = clickCounter % pollLinks.length;
+        clickCounter++;
         return pollLinks[index];
     }
 
-    function handleClick(participantId) {
-        const pollLink = generatePollLink(participantId);
-        alert(`Participant ${participantId}: Please take the poll at ${pollLink}`);
+    function handleClick() {
+        const pollLink = generatePollLink();
+        alert(`Please take the poll at ${pollLink}`);
     }
 </script>
 
 <!-- Simulate showing polls to participants -->
-<button onclick="handleClick(1)">Participant 1</button>
-<button onclick="handleClick(2)">Participant 2</button>
-<button onclick="handleClick(3)">Participant 3</button>
-<!-- Add more buttons as needed -->
+<button onclick="handleClick()">Click Me to Get Your Poll Link</button>
 
 </body>
 </html>
